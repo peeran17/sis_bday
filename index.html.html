@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Sameera Akka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --maroon-deep: #4a1226;
+    --maroon-mid: #6b1e3c;
+    --magenta: #c1436d;
+    --marigold: #e8a33d;
+    --marigold-light: #f3c66b;
+    --blush: #f7d9d0;
+    --jasmine: #fff8f0;
+    --leaf: #7a9b6e;
+    --shadow: rgba(20, 4, 10, 0.35);
+    --font-display: "Yeseva One", serif;
+    --font-script: "Dancing Script", cursive;
+    --font-body: "Poppins", sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: radial-gradient(ellipse at top, var(--maroon-mid) 0%, var(--maroon-deep) 65%, #300a17 100%);
+    color: var(--jasmine);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+  .petal-field { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+  .petal {
+    position: absolute; top: -5%; width: 14px; height: 14px;
+    border-radius: 0 60% 0 60%; opacity: 0.85; animation: fall linear infinite;
+    box-shadow: inset -2px -2px 3px rgba(0,0,0,0.15);
+  }
+  @keyframes fall {
+    0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(110vh) translateX(var(--drift, 40px)) rotate(360deg); opacity: 0.4; }
+  }
+  .garland { position: relative; width: 100%; height: 46px; display: flex; justify-content: center; z-index: 2; }
+  .garland svg { width: min(720px, 92%); height: 46px; }
+  .screen { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 2.5rem 1.25rem 4rem; }
+  #page-two { display: none; }
+  .hero { margin-top: 2.5rem; text-align: center; max-width: 640px; animation: riseIn 1.1s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .eyebrow { letter-spacing: 0.35em; text-transform: uppercase; font-size: 0.7rem; color: var(--marigold-light); margin-bottom: 0.75rem; }
+  .script-line { font-family: var(--font-script); font-size: clamp(2.6rem, 8vw, 4.2rem); color: var(--marigold-light); line-height: 1; text-shadow: 0 4px 24px rgba(232,163,61,0.35); }
+  .display-name { font-family: var(--font-display); font-size: clamp(3rem, 11vw, 6rem); margin: 0.35rem 0 1.5rem; text-shadow: 0 6px 30px var(--shadow); }
+  .caption-stack { display: flex; flex-direction: column; gap: 0.65rem; margin: 0 auto 2.75rem; max-width: 420px; }
+  .caption-stack p { font-size: 1.02rem; color: var(--blush); opacity: 0.95; }
+  .caption-stack .headline-caption { font-family: var(--font-display); font-size: 1.35rem; color: var(--marigold-light); margin-bottom: 0.35rem; }
+  .surprise-btn {
+    font-family: var(--font-body); font-weight: 600; font-size: 1rem; letter-spacing: 0.04em;
+    color: var(--maroon-deep); background: linear-gradient(135deg, var(--marigold-light), var(--marigold));
+    border: none; padding: 1.05rem 2.6rem; border-radius: 999px; cursor: pointer;
+    box-shadow: 0 12px 30px rgba(232,163,61,0.35), 0 2px 0 rgba(255,255,255,0.4) inset;
+    transition: transform 0.25s ease, box-shadow 0.25s ease; display: inline-flex; align-items: center; gap: 0.6rem;
+  }
+  .surprise-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 16px 36px rgba(232,163,61,0.5), 0 2px 0 rgba(255,255,255,0.4) inset; }
+  .surprise-btn:active { transform: translateY(0) scale(0.98); }
+  .spark { display: inline-block; animation: twinkle 1.6s ease-in-out infinite; }
+  @keyframes twinkle { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: 0.6; } }
+  .hint { margin-top: 1.1rem; font-size: 0.8rem; color: var(--blush); opacity: 0.65; }
+  .page-two-title { font-family: var(--font-display); font-size: clamp(2.1rem, 6vw, 3.1rem); text-align: center; color: var(--marigold-light); margin: 2rem 0 0.5rem; text-shadow: 0 6px 24px var(--shadow); }
+  .page-two-sub { font-family: var(--font-script); font-size: 1.5rem; text-align: center; color: var(--blush); margin-bottom: 2.5rem; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.6rem; width: min(980px, 100%); margin: 0 auto 3rem; }
+  .frame {
+    background: var(--jasmine); padding: 0.6rem 0.6rem 1rem; border-radius: 6px; box-shadow: 0 14px 34px var(--shadow);
+    transform: rotate(var(--tilt, -2deg)); transition: transform 0.35s ease, box-shadow 0.35s ease;
+    opacity: 0; animation: photoIn 0.7s ease forwards; animation-delay: var(--delay, 0s);
+  }
+  .frame:hover { transform: rotate(0deg) scale(1.04); box-shadow: 0 20px 44px rgba(0,0,0,0.45); }
+  @keyframes photoIn { from { opacity: 0; transform: translateY(30px) rotate(var(--tilt, -2deg)); } to { opacity: 1; transform: translateY(0) rotate(var(--tilt, -2deg)); } }
+  .photo-slot {
+    width: 100%; aspect-ratio: 4 / 5; border-radius: 2px; overflow: hidden;
+    background: linear-gradient(145deg, var(--blush), #eec1a8);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: var(--maroon-mid); text-align: center; gap: 0.4rem;
+  }
+  .photo-slot svg { width: 34%; opacity: 0.55; }
+  .photo-slot span { font-size: 0.68rem; font-family: var(--font-body); opacity: 0.7; padding: 0 0.6rem; }
+  .photo-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .frame figcaption { font-size: 0.8rem; color: var(--maroon-deep); text-align: center; margin-top: 0.55rem; font-style: italic; }
+  .letter {
+    max-width: 620px; background: rgba(255,248,240,0.06); border: 1px solid rgba(232,163,61,0.35);
+    border-radius: 18px; padding: 2.4rem clamp(1.4rem, 5vw, 3rem); position: relative; margin-bottom: 3rem;
+  }
+  .letter::before {
+    content: "\201C"; font-family: var(--font-display); position: absolute; top: -18px; left: 24px;
+    font-size: 4rem; color: var(--marigold); background: var(--maroon-deep); padding: 0 10px;
+  }
+  .letter p { font-size: 1.02rem; line-height: 1.85; margin-bottom: 1rem; }
+  .letter p:last-child { margin-bottom: 0; }
+  .signoff { font-family: var(--font-script); font-size: 1.6rem; color: var(--marigold-light); text-align: right; margin-top: 1.4rem; }
+  .music-note {
+    font-size: 0.8rem; color: var(--blush); opacity: 0.7; text-align: center; max-width: 420px; margin: 0 auto 1rem;
+    border: 1px dashed rgba(232,163,61,0.4); border-radius: 10px; padding: 0.7rem 1rem;
+  }
+  .back-link { display: inline-block; margin-top: 0.5rem; color: var(--marigold-light); text-decoration: none; font-size: 0.85rem; opacity: 0.8; border-bottom: 1px solid transparent; }
+  .back-link:hover { border-color: var(--marigold-light); }
+  @media (max-width: 480px) { .frame { --tilt: 0deg !important; } }
+  @media (prefers-reduced-motion: reduce) { .petal, .hero, .frame, .spark { animation: none !important; } }
+</style>
+</head>
+<body>
+
+  <div class="petal-field"></div>
+
+  <!-- PAGE ONE -->
+  <div class="screen" id="page-one">
+    <div class="garland" aria-hidden="true">
+      <svg viewBox="0 0 720 46" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,4 Q60,44 120,4 T240,4 T360,4 T480,4 T600,4 T720,4" fill="none" stroke="#7a9b6e" stroke-width="2.5"/>
+        <g fill="#e8a33d">
+          <circle cx="30" cy="18" r="7"/><circle cx="90" cy="26" r="7"/><circle cx="150" cy="18" r="7"/>
+          <circle cx="210" cy="26" r="7"/><circle cx="270" cy="18" r="7"/><circle cx="330" cy="26" r="7"/>
+          <circle cx="390" cy="18" r="7"/><circle cx="450" cy="26" r="7"/><circle cx="510" cy="18" r="7"/>
+          <circle cx="570" cy="26" r="7"/><circle cx="630" cy="18" r="7"/><circle cx="690" cy="26" r="7"/>
+        </g>
+        <g fill="#c1436d">
+          <circle cx="30" cy="18" r="2.5"/><circle cx="90" cy="26" r="2.5"/><circle cx="150" cy="18" r="2.5"/>
+          <circle cx="210" cy="26" r="2.5"/><circle cx="270" cy="18" r="2.5"/><circle cx="330" cy="26" r="2.5"/>
+          <circle cx="390" cy="18" r="2.5"/><circle cx="450" cy="26" r="2.5"/><circle cx="510" cy="18" r="2.5"/>
+          <circle cx="570" cy="26" r="2.5"/><circle cx="630" cy="18" r="2.5"/><circle cx="690" cy="26" r="2.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <main class="hero">
+      <p class="eyebrow">A little something for you</p>
+      <p class="script-line">Happy Birthday</p>
+      <h1 class="display-name">Sameera Akka</h1>
+      <div class="caption-stack">
+        <p class="headline-caption">You're a best sister forever in my life 💛</p>
+        <p>The one who fought with me over the last piece of food and still saved me the biggest one.</p>
+        <p>My built-in best friend, my loudest cheerleader, my forever home.</p>
+      </div>
+      <button class="surprise-btn" onclick="goToPageTwo()">
+        <span class="spark">✨</span> Open Your Surprise <span class="spark">✨</span>
+      </button>
+      <p class="hint">go on, tap it Akka</p>
+    </main>
+  </div>
+
+  <!-- PAGE TWO -->
+  <div class="screen" id="page-two">
+    <h1 class="page-two-title">Surprise, Akka! 🎊</h1>
+    <p class="page-two-sub">a few of my favorite moments with you</p>
+
+    <audio id="birthday-song" autoplay loop hidden>
+      <source src="Birthday-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="gallery" id="gallery"></section>
+
+    <article class="letter">
+      <p>We are Very Missing you on ur Special Day 🎉,I Hope I can make somehow Special for you.Be simle Always we are Always Loving you as A Own Sister 🫶🫶🫶🫶❤️❤️🥰.</p>
+      <p>i'm very missing those days ur giving the Extra Chocolate for me Bacuase of i'm ur Brother the days had gone.Hope Celebrathe the birthday more special . That's a kind of love I never had to earn — you just gave it, always.</p>
+      <p>Today isn't just about cake and candles. It's a reminder that the world got so much brighter the day you were born, because it meant I got a sister like you. So here's to more inside jokes, more late-night talks, more festivals together, and every celebration still ahead of us.</p>
+      <p>Happy Birthday, Akka. Thank you for being my favorite person in this life.</p>
+      <p class="signoff">— your favorite sibling 😉</p>
+    </article>
+
+    <a href="#" class="back-link" onclick="goToPageOne(); return false;">← back to the beginning</a>
+  </div>
+
+  <script>
+    function startBirthdaySong() {
+      const song = document.getElementById('birthday-song');
+      song.play().catch(() => {});
+    }
+
+    function goToPageTwo() {
+      document.getElementById('page-one').style.display = 'none';
+      document.getElementById('page-two').style.display = 'flex';
+      startBirthdaySong();
+      window.scrollTo(0,0);
+    }
+    function goToPageOne() {
+      document.getElementById('page-two').style.display = 'none';
+      document.getElementById('page-one').style.display = 'flex';
+      window.scrollTo(0,0);
+    }
+
+    // Falling petals
+    (function spawnPetals(count){
+      const field = document.querySelector('.petal-field');
+      for (let i = 0; i < count; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        const left = Math.random() * 100;
+        const size = 8 + Math.random() * 10;
+        const duration = 9 + Math.random() * 10;
+        const delay = Math.random() * 12;
+        const drift = (Math.random() - 0.5) * 160;
+        petal.style.left = left + 'vw';
+        petal.style.width = size + 'px';
+        petal.style.height = size + 'px';
+        petal.style.background = Math.random() > 0.5 ? '#e8a33d' : '#c1436d';
+        petal.style.animationDuration = duration + 's';
+        petal.style.animationDelay = delay + 's';
+        petal.style.setProperty('--drift', drift + 'px');
+        field.appendChild(petal);
+      }
+    })(24);
+
+    // Photo gallery with elegant placeholder frames (swap the src to a real
+    // photo URL or a base64 image and it will show automatically)
+    const photos = [
+      { src: "pic1.jpeg", caption: "Rare Pic 😁😁" },
+      { src: "pic2.jpeg", caption: "Found it in Gallery 😂😂" },
+      { src: "pic3.jpeg", caption: "speacial Moment 🫶🫶" }
+    ];
+    const tilts = [-3, 2, -2];
+    const gallery = document.getElementById('gallery');
+    photos.forEach((p, i) => {
+      const fig = document.createElement('figure');
+      fig.className = 'frame';
+      fig.style.setProperty('--tilt', tilts[i] + 'deg');
+      fig.style.setProperty('--delay', (i * 0.1) + 's');
+      const slotContent = p.src
+        ? `<img src="${p.src}" alt="Sameera Akka">`
+        : `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 3L7.17 5H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2h-3.17L15 3H9zm3 15a5 5 0 110-10 5 5 0 010 10z"/></svg><span>add her photo here</span>`;
+      fig.innerHTML = `<div class="photo-slot">${slotContent}</div><figcaption>${p.caption}</figcaption>`;
+      gallery.appendChild(fig);
+    });
+
+    startBirthdaySong();
+  </script>
+</body>
+</html>
